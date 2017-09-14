@@ -1,6 +1,8 @@
-#include<stdio.h>
  /*will attempt to include a repeated operation loop to allow users to continue operating.
 	as of now, user can only perform one operation before program closes*/
+
+#include<stdio.h>
+
 int main()
 {
 	char op;
