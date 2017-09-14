@@ -14,11 +14,11 @@ int main()
 	scanf_s("%c", &op, 1); //get input operation
 		switch (op) { 
 			case'x':
-				printf("You have chosen multiplication\nHere is the result: ");
+				printf("You have chosen multiplication\nHere is the result: "); //check correct operation
 				scanf_s("%d", &mult1); //get input numbers
 				scanf_s("%d", &mult2);
 				m = mult1 * mult2;
-				printf("%d*%d=%d\n", mult1, mult2, m);
+				printf("%d*%d=%d\n", mult1, mult2, m); //print output result
 				break;
 			case '+':
 				printf("You have chosen addition\nHere is the result: ");
