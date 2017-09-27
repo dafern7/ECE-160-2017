@@ -7,7 +7,7 @@
 int main()
 {
 	char op;
-	int mult1, mult2, add1, add2, sub1, sub2, m, a, s;
+	float mult1, mult2, add1, add2, sub1, sub2, m, a, s;
 	float div1, div2, d;
 
 	printf("Enter an operation followed by the numbers you wish to use in order.\nBe sure to include spaces between each number!: ");
@@ -15,24 +15,24 @@ int main()
 		switch (op) { 
 			case'x':
 				printf("You have chosen multiplication\nHere is the result: "); //check correct operation
-				scanf_s("%d", &mult1); //get input numbers
-				scanf_s("%d", &mult2);
+				scanf_s("%f", &mult1); //get input numbers
+				scanf_s("%f", &mult2);
 				m = mult1 * mult2;
-				printf("%d*%d=%d\n", mult1, mult2, m); //print output result
+				printf("%f*%f=%f\n", mult1, mult2, m); //print output result
 				break;
 			case '+':
 				printf("You have chosen addition\nHere is the result: ");
-				scanf_s("%d", &add1);
-				scanf_s("%d", &add2);
+				scanf_s("%f", &add1);
+				scanf_s("%f", &add2);
 				a = add1 + add2;
-				printf("%d+%d=%d\n", add1, add2, a);
+				printf("%f+%f=%f\n", add1, add2, a);
 				break;
 			case '-':
 				printf("You have chosen subtraction\nHere is the result: ");
-				scanf_s("%d", &sub1);
-				scanf_s("%d", &sub2);
+				scanf_s("%f", &sub1);
+				scanf_s("%f", &sub2);
 				s = sub1 - sub2;
-				printf("%d-%d=%d\n", sub1, sub2, s);
+				printf("%f-%f=%f\n", sub1, sub2, s);
 				break;
 			case '/':
 				printf("You have chosen division\nHere is the result: ");
