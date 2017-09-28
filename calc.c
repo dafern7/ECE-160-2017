@@ -1,49 +1,44 @@
 #include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
 
- /*will attempt to include a repeated operation loop to allow users to continue operating.
-	as of now, user can only perform one operation before program closes*/
-/* note that users can only operate up to a value of 4294967296, as the operating system is 32 bit.*/
-
-int main()
+int main(int argc, char *argv[])
 {
-	char op;
-	float mult1, mult2, add1, add2, sub1, sub2, m, a, s;
-	float div1, div2, d;
+	if (argc != 4) {
+		printf("\nwrong number of arguments\n");
+	}
+	else {
+		float first, second;
+		char op;
+		//sscanf_s reads the values inputted and puts them into the allocated memory as a float. 
+		//the _s is a safety measure in order to avoid buffer overflow.
 
-	printf("Enter an operation followed by the numbers you wish to use in order.\nBe sure to include spaces between each number!: ");
-	scanf_s("%c", &op, 1); //get input operation
-		switch (op) { 
-			case'x':
-				printf("You have chosen multiplication\nHere is the result: "); //check correct operation
-				scanf_s("%f", &mult1); //get input numbers
-				scanf_s("%f", &mult2);
-				m = mult1 * mult2;
-				printf("%f*%f=%f\n", mult1, mult2, m); //print output result
+		sscanf_s(argv[2], "%f", &first);
+		sscanf_s(argv[1], "%c", &op);
+		sscanf_s(argv[3], "%f", &second);
+
+		switch (op) {//take input operator
+		case'x':
+			printf("%f \n", first * second); //print output result
+			break;
+		case '+':
+				printf("%f \n", first + second); //print output result
 				break;
-			case '+':
-				printf("You have chosen addition\nHere is the result: ");
-				scanf_s("%f", &add1);
-				scanf_s("%f", &add2);
-				a = add1 + add2;
-				printf("%f+%f=%f\n", add1, add2, a);
+		case '-':
+				printf("%f \n", first - second); //print output result
 				break;
-			case '-':
-				printf("You have chosen subtraction\nHere is the result: ");
-				scanf_s("%f", &sub1);
-				scanf_s("%f", &sub2);
-				s = sub1 - sub2;
-				printf("%f-%f=%f\n", sub1, sub2, s);
+		case '/':
+				if (second == 0) {
+					printf("cannot divide by zero!\n");
+				}
+				else
+				printf("%f \n", first / second); //print output result
 				break;
-			case '/':
-				printf("You have chosen division\nHere is the result: ");
-				scanf_s("%f", &div1);
-				scanf_s("%f", &div2);
-				d = div1 / div2;
-				printf("%f/%f=%f\n", div1, div2, d);
-				break;
-			default:
+		default:
 				printf("that isn't an operation, sadly :(\n");
+				
 		}
-	system("pause"); //used to keep windows console from closing immediately after operation
-	return 0;
+		system("pause"); //used to keep windows console from closing immediately after operation
+		return 0;
+	}
 }
