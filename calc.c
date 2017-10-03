@@ -10,12 +10,12 @@ int main(int argc, char *argv[])
 	else {
 		float first, second;
 		char op;
-		//sscanf_s reads the values inputted and puts them into the allocated memory as a float. 
-		//the _s is a safety measure in order to avoid buffer overflow.
+		//sscanf reads the values inputted and puts them into the allocated memory as a float. 
+		
 
-		sscanf_s(argv[2], "%f", &first);
-		sscanf_s(argv[1], "%c", &op);
-		sscanf_s(argv[3], "%f", &second);
+		sscanf(argv[2], "%f", &first);
+		sscanf(argv[1], "%c", &op);
+		sscanf(argv[3], "%f", &second);
 
 		switch (op) {//take input operator
 		case'x':
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 				printf("that isn't an operation, sadly :(\n");
 				
 		}
-		system("pause"); //used to keep windows console from closing immediately after operation
+		//system("pause"); //used to keep windows console from closing immediately after operation
 		return 0;
 	}
 }
